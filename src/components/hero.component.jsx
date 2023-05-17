@@ -1,3 +1,6 @@
+import Lottie from "lottie-react";
+import animation1 from "./animation.json";
+
 const Hero = () => {
   return (
     <section class="bg-gradient-to-br from-white to-pink-100 dark:bg-gray-900">
@@ -33,12 +36,7 @@ const Hero = () => {
           </a>
         </div>
         <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-          <img
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
-            alt="mockup"
-            width="1000"
-            height="1000"
-          />
+        <Lottie animationData={animation1} loop={true} />
         </div>
       </div>
     </section>
