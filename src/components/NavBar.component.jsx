@@ -1,6 +1,6 @@
 const NavBar = () => {
   return (
-    <nav className="bg-gradient-to-tr from-white to-pink-100 dark:bg-pink-900 ">
+    <nav className="bg-gradient-to-tr from-white to-orange-100 dark:bg-orange-900 ">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="https://flowbite.com/" className="flex items-center">
           <img
@@ -113,7 +113,7 @@ const NavBar = () => {
             <li>
               <a
                 href="/"
-                className="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                className="block py-2 pl-3 pr-4 text-gray rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
                 aria-current="page"
               >
                 Home
