@@ -34,7 +34,7 @@ const Hero = () => {
         </div>
         <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
           <img
-            src="https://o.remove.bg/downloads/a7ae2589-e274-47bd-b1cd-3035084705e4/front-view-young-beautiful-lady-red-t-shirt-black-jeans-holding-different-copybooks-files-smiling-with-bag-white_140725-18638-removebg-preview.png"
+            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
             alt="mockup"
             width="1000"
             height="1000"
