@@ -10,6 +10,8 @@ const Modules = [
   "Module 7",
 ];
 
+const courseName = 'BMAT205L Probability and Statistics';
+
 const ModuleBar = () => {
   return (
     <>
@@ -47,7 +49,7 @@ const ModuleBar = () => {
                 href="/"
                 class="flex items-center font-bold text-2xl p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
-                <span class="ml-3">Probability and Statistics</span>
+                <span class="ml-3">{courseName}</span>
               </a>
             </li>
             <li>
