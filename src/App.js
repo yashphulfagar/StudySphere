@@ -1,17 +1,12 @@
 import './App.css'
-import NavBar from './components/NavBar.component'
-import Footer from './components/Footer.component'
-import Hero from './components/hero.component'
-import Feature from './components/feature.component'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './pages/homepage.pages'
 
 const App = () => {
   return (
-    <>
-      <NavBar />
-      <Hero />
-      <Feature />
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage />}></Route>
+    </Routes>
   )
 }
 
