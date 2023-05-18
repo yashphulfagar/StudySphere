@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/react": "^2.6.1",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.18",
     "@nextui-org/react": "^1.0.0-beta.12",
@@ -12,6 +15,7 @@
     "browser-router": "^0.2.0",
     "flowbite": "^1.6.5",
     "flowbite-react": "^0.4.4",
+    "framer-motion": "^10.12.12",
     "lottie-react": "^2.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
