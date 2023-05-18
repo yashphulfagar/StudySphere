@@ -7,7 +7,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />}></Route>
-      <Route path="courses" element={<CoursesPage />}></Route>
+      <Route path="courses/BMAT205L" element={<CoursesPage />}></Route>
     </Routes>
   )
 }
