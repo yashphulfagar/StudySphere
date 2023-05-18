@@ -1,4 +1,4 @@
-import DataDemo1 from "./datademo1.component";
+import DataDemo1 from "./datademomain";
 
 const Modules = [
   "Module 1",
@@ -10,7 +10,7 @@ const Modules = [
   "Module 7",
 ];
 
-const courseName = 'BMAT205L Probability and Statistics';
+const courseName = "BMAT205L Probability and Statistics";
 
 const ModuleBar = () => {
   return (
@@ -54,7 +54,7 @@ const ModuleBar = () => {
             </li>
             <li>
               <a
-                href="/"
+                href="/courses/BMAT205L/mod1"
                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <span class="ml-3">{Modules[0]}</span>
@@ -62,7 +62,7 @@ const ModuleBar = () => {
             </li>
             <li>
               <a
-                href="/"
+                href="/courses/BMAT205L/mod2"
                 class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
               >
                 <span class="flex-1 ml-3 whitespace-nowrap">{Modules[1]}</span>
