@@ -1,4 +1,4 @@
-import DataDemo1 from './datademo1.component'
+import DataDemo1 from "./datademo1.component";
 
 const Modules = [
   "Module 1",
@@ -117,7 +117,7 @@ const ModuleBar = () => {
       </aside>
       {/* NavBar Added Once Again */}
       <nav class="fixed top-0 left-0 z-40 w-full bg-white dark:bg-gray-800 shadow">
-        <nav className="bg-gradient-to-tr from-white to-orange-100 dark:bg-orange-900 ">
+        <nav className="dark:bg-orange-900 ">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="https://flowbite.com/" className="flex items-center">
               <img
@@ -258,11 +258,11 @@ const ModuleBar = () => {
         </nav>
       </nav>
 
-      <div class=" p-4 sm:ml-64">
-        <div class=" p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+      <div class="p-4 sm:ml-64">
+        <div class="dark:bg-gray-900 p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 ">
           <DataDemo1></DataDemo1>
-          </div>
         </div>
+      </div>
     </>
   );
 };
