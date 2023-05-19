@@ -1,16 +1,12 @@
-<<<<<<< Updated upstream
-const NavBar = ({courses}) => {
-  let str;
-  if(courses) {
-    str = `dark:bg-orange-900`
-  }
-  else{
-    str = `bg-gradient-to-tr from-white to-orange-100 dark:bg-orange-900`
-  }
-=======
 import { Link } from "react-router-dom";
-const NavBar = () => {
->>>>>>> Stashed changes
+
+const NavBar = ({ courses }) => {
+  let str;
+  if (courses) {
+    str = `dark:bg-orange-900`;
+  } else {
+    str = `bg-gradient-to-tr from-white to-orange-100 dark:bg-orange-900`;
+  }
   return (
     <nav className={str}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
