@@ -6,10 +6,12 @@ import Feature from "../components/feature.component";
 const HomePage = () => {
   return (
     <>
+    <div>
       <NavBar />
       <Hero />
       <Feature />
       <Footer />
+    </div>
     </>
   );
 };

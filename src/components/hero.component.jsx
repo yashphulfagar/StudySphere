@@ -1,5 +1,6 @@
 import Lottie from "lottie-react";
 import animation1 from "./animation.json";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -16,8 +17,8 @@ const Hero = () => {
             experience, where education and innovation intersect, guiding you
             towards academic excellence and personal growth.
           </p>
-          <a
-            href="/courses"
+          <Link
+            to="/courses"
             className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
           >
             Explore Courses
@@ -33,7 +34,7 @@ const Hero = () => {
                 clipRule="evenodd"
               ></path>
             </svg>
-          </a>
+          </Link>
         </div>
         <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
           <Lottie animationData={animation1} loop={true} />

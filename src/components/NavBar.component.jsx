@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 const NavBar = ({courses}) => {
   let str;
   if(courses) {
@@ -6,6 +7,10 @@ const NavBar = ({courses}) => {
   else{
     str = `bg-gradient-to-tr from-white to-orange-100 dark:bg-orange-900`
   }
+=======
+import { Link } from "react-router-dom";
+const NavBar = () => {
+>>>>>>> Stashed changes
   return (
     <nav className={str}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -118,29 +123,29 @@ const NavBar = ({courses}) => {
           </div>
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-transparent">
             <li>
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="block py-2 pl-3 pr-4 text-gray rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
                 aria-current="page"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/departments"
+              <Link
+                to="/courses"
                 className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
-                Departments
-              </a>
+                Courses
+              </Link>
             </li>
             <li>
-              <a
-                href="/about"
+              <Link
+                to="/about"
                 className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 About
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
