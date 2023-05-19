@@ -15,6 +15,8 @@ const courseName = "BMAT205L Probability and Statistics";
 const ModuleBar = () => {
   return (
     <>
+      <div className="sm:pt-20 pt-32">
+      <div className="fixed top-20 left-0 right-0">
       <button
         data-drawer-target="logo-sidebar"
         data-drawer-toggle="logo-sidebar"
@@ -37,6 +39,7 @@ const ModuleBar = () => {
           ></path>
         </svg>
       </button>
+      </div>
       <aside
         id="logo-sidebar"
         class="fixed top-20 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
@@ -264,6 +267,7 @@ const ModuleBar = () => {
         <div class="dark:bg-gray-900 p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 ">
           <DataDemo1></DataDemo1>
         </div>
+      </div>
       </div>
     </>
   );
