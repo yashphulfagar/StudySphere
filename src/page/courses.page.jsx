@@ -5,7 +5,7 @@ import ModuleBar from "../components/sidebar.component";
 const CoursesPage = () => {
   return (
     <>
-      <NavBar />
+      <NavBar courses={true} />
       <ModuleBar />
     </>
   );

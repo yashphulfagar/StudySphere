@@ -1,6 +1,13 @@
-const NavBar = () => {
+const NavBar = ({courses}) => {
+  let str;
+  if(courses) {
+    str = `dark:bg-orange-900`
+  }
+  else{
+    str = `bg-gradient-to-tr from-white to-orange-100 dark:bg-orange-900`
+  }
   return (
-    <nav className="bg-gradient-to-tr from-white to-orange-100 dark:bg-orange-900 ">
+    <nav className={str}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="https://flowbite.com/" className="flex items-center">
           <img
