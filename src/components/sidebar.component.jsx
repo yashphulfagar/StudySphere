@@ -1,5 +1,3 @@
-import NavBar from "./NavBar.component";
-
 import React, { useState } from "react";
 import DisplayData from "./displayData.component";
 
@@ -53,13 +51,12 @@ const modulesData = [
 const courseName = "BMAT205L Probability and Statistics";
 
 const ModuleBar = () => {
-  const [selectedModuleId, setSelectedModuleId] = useState(null);
+  const [selectedModuleId, setSelectedModuleId] = useState(1);
   const handleModuleClick = (moduleId) => {
     setSelectedModuleId(moduleId);
   };
   return (
     <>
-      <NavBar />
       <div className="sm:pt-20 pt-32">
         <div className="fixed top-20 left-0 right-0">
           <button
@@ -87,7 +84,7 @@ const ModuleBar = () => {
         </div>
         <aside
           id="logo-sidebar"
-          class="fixed top-20 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+          class="fixed sm:top-20 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
           aria-label="Sidebar"
         >
           <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
@@ -102,7 +99,7 @@ const ModuleBar = () => {
                   <div
                     key={module.id}
                     onClick={() => handleModuleClick(module.id)}
-                    className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                    className="cursor-pointer flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                   >
                     <span className="flex-1 ml-3 whitespace-nowrap">
                       {module.title}

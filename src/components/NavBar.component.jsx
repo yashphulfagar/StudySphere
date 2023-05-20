@@ -12,7 +12,7 @@ const navigation = [
 export default function NavBar({ courses }) {
   let barType, barColor;
   if (courses === "1") {
-    barType = `fixed inset-x-0 top-0 z-50 bg-gray-50 dark:bg-gray-900`;
+    barType = `fixed inset-x-0 top-0 z-30 bg-gray-50 dark:bg-gray-900`;
   } else {
     barType = `absolute inset-x-0 top-0 z-50`;
   }
