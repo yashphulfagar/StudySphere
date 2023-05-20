@@ -1,8 +1,65 @@
-const DataDemo1 = () => {
+const modulesData = [
+  {
+    id: 1,
+    title: "Module 1",
+    text: "This is the content of module 1",
+    link: "https://example.com/module1",
+  },
+  {
+    id: 2,
+    title: "Module 2",
+    text: "This is the content of module 2",
+    link: "https://example.com/module2",
+  },
+  {
+    id: 3,
+    title: "Module 3",
+    text: "This is the content of module 3",
+    link: "https://example.com/module3",
+  },
+  {
+    id: 4,
+    title: "Module 4",
+    text: "This is the content of module 4",
+    link: "https://example.com/module4",
+  },
+  {
+    id: 5,
+    title: "Module 5",
+    text: "This is the content of module 5",
+    link: "https://example.com/module5",
+  },
+  {
+    id: 6,
+    title: "Module 6",
+    text: "This is the content of module 6",
+    link: "https://example.com/module6",
+  },
+  {
+    id: 7,
+    title: "Module 7",
+    text: "This is the content of module 7",
+    link: "https://example.com/module7",
+  },
+  // Add more module objects as needed
+];
+const DataDemo1 = ({moduleId}) => {
+  const selectedModule = modulesData.find((module) => module.id === moduleId);
+
+  if (!selectedModule) {
+    return <div>No module selected</div>;
+  }
+
   return (
+    
     <section class=" dark:bg-gray-900 bg-white dark:bg-gray-900">
       <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div class="max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400">
+        <div>
+      <h3>{selectedModule.title}</h3>
+      <p>{selectedModule.text}</p>
+      <a href={selectedModule.link}>Link</a>
+    </div>
           <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
             (BMAT205L) Probability and Statistics
           </h2>
