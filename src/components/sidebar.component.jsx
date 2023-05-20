@@ -55,6 +55,17 @@ const ModuleBar = () => {
   const handleModuleClick = (moduleId) => {
     setSelectedModuleId(moduleId);
   };
+
+  const handleModuleClickPrev = (moduleId) => {
+    moduleId = moduleId - 1;
+    setSelectedModuleId(moduleId);
+  };
+
+  const handleModuleClickNext = (moduleId) => {
+    moduleId = moduleId + 1;
+    setSelectedModuleId(moduleId);
+  };
+
   return (
     <>
       <div className="sm:pt-20 pt-32">
@@ -111,11 +122,31 @@ const ModuleBar = () => {
           </div>
         </aside>
 
-
-          {/* Displaying Module Data here */}
+        {/* Displaying Module Data here */}
         <div class="p-4 sm:ml-64">
           <div class="dark:bg-gray-900 p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 ">
-            <DisplayData moduleId={selectedModuleId} modulesData={modulesData} />
+            <DisplayData
+              moduleId={selectedModuleId}
+              modulesData={modulesData}
+            />
+
+            <div class="inline-flex rounded-md shadow-sm" role="group">
+              <button
+                onClick={() => handleModuleClickPrev(selectedModuleId)}
+                type="button"
+                class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
+              >
+                Previous
+              </button>
+
+              <button
+                onClick={() => handleModuleClickNext(selectedModuleId)}
+                type="button"
+                class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
       </div>

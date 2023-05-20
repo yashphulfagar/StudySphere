@@ -14,6 +14,7 @@ const DisplayData = ({ moduleId, modulesData }) => {
             <p>{selectedModule.text}</p>
             <a href={selectedModule.link}>Link</a>
           </div>
+          <div>{/* next previous buttons here */}</div>
           {/* <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
             {title}
           </h2>
