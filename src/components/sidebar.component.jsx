@@ -58,13 +58,19 @@ const ModuleBar = () => {
 
   const handleModuleClickPrev = (moduleId) => {
     moduleId = moduleId - 1;
-    setSelectedModuleId(moduleId);
+    if (moduleId >= 1) {
+      setSelectedModuleId(moduleId);
+    }
   };
-
+  
   const handleModuleClickNext = (moduleId) => {
-    moduleId = moduleId + 1;
-    setSelectedModuleId(moduleId);
-  };
+    const totalModules = modulesData.length;
+    const nextModuleId = moduleId + 1;
+  
+    if (nextModuleId <= totalModules) {
+      setSelectedModuleId(nextModuleId);
+    }
+  };  
 
   return (
     <>
@@ -130,25 +136,28 @@ const ModuleBar = () => {
               modulesData={modulesData}
             />
 
-            <div class="flex justify-center">
-              <div class="inline-flex rounded-md shadow-sm" role="group">
-                <button
-                  onClick={() => handleModuleClickPrev(selectedModuleId)}
-                  type="button"
-                  className="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
-                >
-                  Previous
-                </button>
+<div className="flex justify-center">
+  <div className="inline-flex rounded-md shadow-sm" role="group">
+    <button
+      onClick={() => handleModuleClickPrev(selectedModuleId)}
+      type="button"
+      disabled={selectedModuleId === 1}
+      className="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
+    >
+      Previous
+    </button>
 
-                <button
-                  onClick={() => handleModuleClickNext(selectedModuleId)}
-                  type="button"
-                  className="px-4  py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
-                >
-                  Next
-                </button>
-              </div>
-            </div>
+    <button
+      onClick={() => handleModuleClickNext(selectedModuleId)}
+      type="button"
+      disabled={selectedModuleId === modulesData.length}
+      className="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white"
+    >
+      Next
+    </button>
+  </div>
+</div>
+
           </div>
         </div>
       </div>
