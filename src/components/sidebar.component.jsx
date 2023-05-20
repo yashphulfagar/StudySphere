@@ -2,15 +2,7 @@ import NavBar from "./NavBar.component";
 
 import React, { useState } from "react";
 import DisplayData from "./displayData.component";
-const Modules = [
-  "Module 1",
-  "Module 2",
-  "Module 3",
-  "Module 4",
-  "Module 5",
-  "Module 6",
-  "Module ",
-];
+
 const modulesData = [
   {
     id: 1,
@@ -55,6 +47,7 @@ const modulesData = [
     link: "https://example.com/module7",
   },
   // Add more module objects as needed
+  //has to be feteched from backend
 ];
 
 const courseName = "BMAT205L Probability and Statistics";
@@ -121,9 +114,11 @@ const ModuleBar = () => {
           </div>
         </aside>
 
+
+          {/* Displaying Module Data here */}
         <div class="p-4 sm:ml-64">
           <div class="dark:bg-gray-900 p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 ">
-            <DisplayData moduleId={selectedModuleId} />
+            <DisplayData moduleId={selectedModuleId} modulesData={modulesData} />
           </div>
         </div>
       </div>
