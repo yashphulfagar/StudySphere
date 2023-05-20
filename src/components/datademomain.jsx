@@ -45,7 +45,8 @@ const modulesData = [
   },
   // Add more module objects as needed
 ];
-const DataDemo1 = ({moduleId}) => {
+const DataDemo1 = ({ moduleId }) => {
+  
   const selectedModule = modulesData.find((module) => module.id === moduleId);
 
   if (!selectedModule) {
@@ -53,16 +54,15 @@ const DataDemo1 = ({moduleId}) => {
   }
 
   return (
-    
     <section class=" dark:bg-gray-900 bg-white dark:bg-gray-900">
       <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div class="max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400">
-        <div>
-      <h3>{selectedModule.title}</h3>
-      <p>{selectedModule.text}</p>
-      <a href={selectedModule.link}>Link</a>
-    </div>
-          <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
+          <div>
+            <h3>{selectedModule.title}</h3>
+            <p>{selectedModule.text}</p>
+            <a href={selectedModule.link}>Link</a>
+          </div>
+          {/* <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
             {title}
           </h2>
           <p class="mb-4 font-light">
@@ -154,7 +154,7 @@ const DataDemo1 = ({moduleId}) => {
             Whether you are a scientist, economist, engineer, or researcher, a
             solid understanding of probability and statistics is essential for
             navigating the complexities of the modern world.
-          </p>
+          </p> */}
         </div>
       </div>
     </section>

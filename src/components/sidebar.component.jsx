@@ -120,7 +120,7 @@ const ModuleBar = () => {
 
         <div class="p-4 sm:ml-64">
           <div class="dark:bg-gray-900 p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 ">
-            <DataDemo1></DataDemo1>
+            <DataDemo1 moduleId={`${module.id}`}></DataDemo1>
           </div>
         </div>
       </div>
