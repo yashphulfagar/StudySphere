@@ -1,3 +1,5 @@
+const title = "(BMAT205L) Probability and Statistics";
+
 const modulesData = [
   {
     id: 1,
@@ -61,7 +63,7 @@ const DataDemo1 = ({moduleId}) => {
       <a href={selectedModule.link}>Link</a>
     </div>
           <h2 class="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
-            (BMAT205L) Probability and Statistics
+            {title}
           </h2>
           <p class="mb-4 font-light">
             Probability and statistics are two closely related branches of
