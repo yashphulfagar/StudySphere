@@ -109,15 +109,14 @@ const ModuleBar = () => {
                   <span class="ml-3">{courseName}</span>
                 </a>
               </li>
-              <div className = "ModulesList">
-                {modulesData.map((title) => {
-                  return <ModuleNumber Modules={title} />
+              <div className="ModulesList">
+                {modulesData.map((Modules) => {
+                  return <ModuleNumber Modules={Modules} />;
                 })}
               </div>
             </ul>
           </div>
         </aside>
-
 
         <div class="p-4 sm:ml-64">
           <div class="dark:bg-gray-900 p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 ">
