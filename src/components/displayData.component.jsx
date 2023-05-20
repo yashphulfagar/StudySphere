@@ -1,5 +1,3 @@
-const title = "(BMAT205L) Probability and Statistics";
-
 const modulesData = [
   {
     id: 1,
@@ -45,8 +43,7 @@ const modulesData = [
   },
   // Add more module objects as needed
 ];
-const DataDemo1 = ({ moduleId }) => {
-  
+const DisplayData = ({ moduleId }) => {
   const selectedModule = modulesData.find((module) => module.id === moduleId);
 
   if (!selectedModule) {
@@ -161,4 +158,4 @@ const DataDemo1 = ({ moduleId }) => {
   );
 };
 
-export default DataDemo1;
+export default DisplayData;

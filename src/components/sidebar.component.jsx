@@ -1,8 +1,7 @@
-import { useState } from "react";
-import DataDemo1 from "./datademomain";
 import NavBar from "./NavBar.component";
-import ModuleNumber from "./modulenumber.component";
 
+import React, { useState } from "react";
+import DisplayData from "./displayData.component";
 const Modules = [
   "Module 1",
   "Module 2",
@@ -67,8 +66,7 @@ const ModuleBar = () => {
   };
   return (
     <>
-      <NavBar courses="1" />
-
+      <NavBar />
       <div className="sm:pt-20 pt-32">
         <div className="fixed top-20 left-0 right-0">
           <button
@@ -100,27 +98,32 @@ const ModuleBar = () => {
           aria-label="Sidebar"
         >
           <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-            <ul class="space-y-2 font-medium">
+            <ul className="space-y-2 font-medium">
               <li>
-                <a
-                  href="/"
-                  class="flex items-center font-bold text-2xl p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-                >
-                  <span class="ml-3">{courseName}</span>
-                </a>
+                <div className="flex items-center font-bold text-2xl p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                  <span className="ml-3">{courseName}</span>
+                </div>
               </li>
-              <div className="ModulesList">
-                {modulesData.map((Modules) => {
-                  return <ModuleNumber Modules={Modules} />;
-                })}
-              </div>
+              {modulesData.map((module) => (
+                <li>
+                  <div
+                    key={module.id}
+                    onClick={() => handleModuleClick(module.id)}
+                    className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                  >
+                    <span className="flex-1 ml-3 whitespace-nowrap">
+                      {module.title}
+                    </span>
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
         </aside>
 
         <div class="p-4 sm:ml-64">
           <div class="dark:bg-gray-900 p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 ">
-            <DataDemo1 moduleId={`${module.id}`}></DataDemo1>
+            <DisplayData moduleId={selectedModuleId} />
           </div>
         </div>
       </div>
