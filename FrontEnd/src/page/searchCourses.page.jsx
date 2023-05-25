@@ -3,27 +3,30 @@ import CourseCard from "../components/courseCard.component";
 import React, { useState, useEffect } from "react";
 // import Loader from "../components/loader.component";
 import axios from "axios";
-
+import useDebounce from "../hooks/use-debounce";
 export default function SearchforCourses() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  const [data, setData] = useState([]);
+
+  const debounce = useDebounce(searchQuery, 500);
   const fetchData = async () => {
-    const endpoint = `http://127.0.0.1:8000/api/courses/search/?search=${searchQuery}`;
+    const endpoint = `http://127.0.0.1:8000/api/courses/search?search=${searchQuery}`;
     try {
       const response = await fetch(endpoint, {
         method: "GET",
       });
-      const data = await response.json()
-      console.log(data)
+      const data = await response.json();
+      console.log(data);
+      setData(data);
     } catch (e) {
       console.log(e);
     }
   };
-  useEffect(()=>{
-    fetchData()
-  },[searchQuery])
-  
-  
+  useEffect(() => {
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debounce]);
+
   return (
     <>
       <div className="bg-white">
@@ -76,7 +79,7 @@ export default function SearchforCourses() {
                       type="text"
                       id="simple-search"
                       value={searchQuery}
-                      onChange={e=>setSearchQuery(e.target.value)}
+                      onChange={(e) => setSearchQuery(e.target.value)}
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="Search courses..."
                       required
@@ -106,7 +109,7 @@ export default function SearchforCourses() {
               </div>
               <div className="flex justify-center px-5 py-5">
                 <div className="grid gap-4 sm:grid-cols-3">
-                  {searchResults.map((course) => (
+                  {data.map((course) => (
                     <div key={course.id}>
                       <CourseCard
                         courseCode={course.course_code}
