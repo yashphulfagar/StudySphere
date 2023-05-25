@@ -1,7 +1,7 @@
 import NavBar from "../components/NavBar.component";
 import CourseCard from "../components/courseCard.component";
 import React, { useState, useEffect } from "react";
-import Loader from '../components/Loader'
+import Loader from "../components/loader.component";
 import axios from "axios";
 
 export default function SearchforCourses() {
