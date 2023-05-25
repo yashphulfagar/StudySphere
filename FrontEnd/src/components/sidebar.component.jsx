@@ -11,7 +11,7 @@ const ModuleBar = () => {
   const { courseId } = useParams();
   const fetchCourseData = async () => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/courses/${courseId}`);
+      const response = await axios.get(`http://127.0.0.1:8000/api/courses/${courseId}/`);
       console.log(response.data);
       setCourseData(response.data);
       setModulesData(response.data.modules);
@@ -55,11 +55,11 @@ const ModuleBar = () => {
         </div>
       <div className="sm:pt-0">
         {/* Sidebar */}
-        <aside id="default-sidebar" className="fixed sm:top-20 left-0 z-50 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+        <aside id="default-sidebar" className="fixed left-0 z-50 w-64 h-screen transition-transform -translate-x-full sm:top-20 sm:translate-x-0" aria-label="Sidebar">
           <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
             <ul className="space-y-2 font-medium">
               <li>
-                <div className="flex items-center font-bold text-2xl p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+                <div className="flex items-center p-2 text-2xl font-bold text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                   <span className="ml-3">{courseData?.course_name}</span>
                 </div>
               </li>
@@ -81,7 +81,7 @@ const ModuleBar = () => {
 
         {/* Displaying Module Data here */}
         <div className="p-4 sm:ml-64">
-          <div className="dark:bg-gray-900 p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
+          <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:bg-gray-900 dark:border-gray-700">
             <DisplayData moduleId={selectedModuleId}
               modulesData={modulesData}/>
 

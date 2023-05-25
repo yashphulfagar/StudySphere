@@ -20,5 +20,6 @@ from api import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     #API
+    path('',views.get_routes,name = "get_routes"),
     path('api/', include('api.urls')),
 ]
