@@ -23,7 +23,7 @@ export default function SearchforCourses() {
   const searchCourses = async () => {
     try {
       const response = await axios.get(
-        `http://127.0.0.1:8000/api/courses/?search=${searchQuery}`
+        `http://127.0.0.1:8000/api/courses/query/?search=${searchQuery}`
       );
       setSearchResults(response.data);
     } catch (error) {
