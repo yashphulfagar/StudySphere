@@ -7,19 +7,21 @@ from django.db.models import Q
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework import generics,permissions
+from rest_framework import viewsets
 from rest_framework.views import APIView
 from rest_framework.decorators import api_view,permission_classes
 
 ## Class Based Views
-class CourseSearchAPIView(APIView):
-    def get(self, request):
-        query = request.query_params.get('search', '')
-        courses = Course.objects.filter(
-            Q(course_lookup__icontains=query)
-        )[:10]
-        serializer = CourseSerializer(courses, many=True)
-        return Response(serializer.data)
-
+class CourseSearchAPIView(viewsets.ModelViewSet):
+    queryset = Course.objects.all()[:10]
+    serializer_class = CourseSerializer
+    
+    def get_queryset(self):
+        qs = Course.objects.all()
+        search_param = self.request.query_params.get("search")
+        if search_param is not None:
+            qs = qs.filter(course_lookup__contains=search_param)
+        return qs[:10]
 
 
 # Create your views here.

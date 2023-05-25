@@ -7,34 +7,23 @@ import axios from "axios";
 export default function SearchforCourses() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-
-  useEffect(() => {
-    const delaySearch = setTimeout(() => {
-      if (searchQuery) {
-        searchCourses();
-      } else {
-        setSearchResults([]);
-      }
-    }, 500); // Adjust the debounce delay as per your needs
-
-    return () => clearTimeout(delaySearch);
-  }, [searchQuery]);
-
-  const searchCourses = async () => {
+  const fetchData = async () => {
+    const endpoint = `http://127.0.0.1:8000/api/courses/search/?search=${searchQuery}`;
     try {
-      const response = await axios.get(
-        `http://127.0.0.1:8000/api/courses/?search=${searchQuery}`
-      );
-      setSearchResults(response.data);
-    } catch (error) {
-      console.error("Error searching courses:", error);
+      const response = await fetch(endpoint, {
+        method: "GET",
+      });
+      const data = await response.json()
+      console.log(data)
+    } catch (e) {
+      console.log(e);
     }
   };
-
-  const handleSearch = (event) => {
-    setSearchQuery(event.target.value);
-  };
-
+  useEffect(()=>{
+    fetchData()
+  },[searchQuery])
+  
+  
   return (
     <>
       <div className="bg-white">
@@ -87,7 +76,7 @@ export default function SearchforCourses() {
                       type="text"
                       id="simple-search"
                       value={searchQuery}
-                      onChange={handleSearch}
+                      onChange={e=>setSearchQuery(e.target.value)}
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="Search courses..."
                       required
@@ -117,11 +106,15 @@ export default function SearchforCourses() {
               </div>
               <div className="flex justify-center px-5 py-5">
                 <div className="grid gap-4 sm:grid-cols-3">
-                    {searchResults.map((course) => (
-                      <div key={course.id}>
-                         <CourseCard courseCode={course.course_code} courseTitle={course.course_name} courseId ={course.id}/>
-                      </div>
-                    ))}
+                  {searchResults.map((course) => (
+                    <div key={course.id}>
+                      <CourseCard
+                        courseCode={course.course_code}
+                        courseTitle={course.course_name}
+                        courseId={course.id}
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
