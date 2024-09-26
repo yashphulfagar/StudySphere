@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# StudySphere
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**StudySphere** is a collaborative portal developed by students for students, designed to enhance the academic experience through seamless note sharing, access to question papers, and a comprehensive all-in-one student platform. Whether you're looking to share your notes, find past exam papers, or connect with fellow students, StudySphere has got you covered!
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Note Sharing**: Upload and share study notes with classmates.
+- **Question Papers**: Access a repository of previous exam papers for better preparation.
+- **Student Community**: Connect with peers, ask questions, and collaborate on study materials.
+- **User-Friendly Interface**: Easy navigation and intuitive design for a seamless user experience.
+- **Search Functionality**: Quickly find notes or question papers with a robust search feature.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React.js
+- **Backend**: Django
+- **Styling**: CSS Modules or Styled Components
+- **Deployment**: Vercel / Heroku / DigitalOcean
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+To run the StudySphere application locally, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/studysphere.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd studysphere
+   ```
+3. Install the frontend dependencies:
+   ```bash
+   cd frontend
+   npm install
+   ```
+4. Navigate to the backend directory:
+   ```bash
+   cd ../backend
+   ```
+5. Install the backend dependencies (using pip):
+   ```bash
+   pip install -r requirements.txt
+   ```
+6. Run database migrations:
+   ```bash
+   python manage.py migrate
+   ```
+7. Start the Django development server:
+   ```bash
+   python manage.py runserver
+   ```
+8. Start the React development server (in a new terminal):
+   ```bash
+   cd frontend
+   npm start
+   ```
 
-### `npm run build`
+The app will be running on [http://localhost:3000](http://localhost:3000) for the frontend and [http://localhost:8000](http://localhost:8000) for the backend.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Explore the portal for shared notes and question papers.
+- Upload your notes to contribute to the community.
+- Use the search bar to find specific materials quickly.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## License
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
